@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrazione">
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Nome"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/nome2"
+        android:layout_below="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/Nome"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/cognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Cognome"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/nome2"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/cognome2"
+        android:layout_below="@+id/cognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/Cognome"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:layout_below="@+id/cognome2"
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/E_mail"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/mail2"
+        android:layout_below="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/E_mail"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_below="@+id/mail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Password"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_below="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="@string/Password"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/Repetpass"
+        android:layout_below="@+id/password2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Ripeti_Password"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/Repetpass2"
+        android:layout_below="@+id/Repetpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="@string/Ripeti_Password"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Repetpass2"
+        android:text="@string/Registrati"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:background="@drawable/button_shapers"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"/>
+
+
+</RelativeLayout>

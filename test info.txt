@@ -1,0 +1,1440 @@
+//gradle app
+
+//implementation 'com.android.support:design:28.0.0'
+
+//stringhe
+
+<resources>
+    <string name="app_name">Simulazione</string>
+    <string name="Titolo_Registrazione">Registrazione</string>
+    <string name="Titolo_Login">Log in</string>
+    <string name="Titolo_Lista">Lista Elementi</string>
+    <string name="Nome">Nome</string>
+    <string name="Cognome">Cognome</string>
+    <string name="E_mail">E-mail</string>
+    <string name="Password">Password</string>
+    <string name="Ripeti_Password">Ripeti Password</string>
+    <string name="Registrati">Registrati</string>
+    <string name="login">Login</string>
+    <string name="dialog">Utenti già registrati per testare velocemente l\'app</string>
+    <string name="continue_Button">Continua</string>
+    <string name="checked">Checked</string>
+    <string name="salva">SALVA</string>
+</resources>
+
+//colori 
+<color name="centerColor">#36F2FF</color>
+    <color name="startColor">#C7FFF4</color>
+    <color name="endColor">#1484F5</color>
+    <color name="blu">#4621FF</color>
+	
+	//new folder in res menu di nome menu
+	
+	<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/salva"
+        android:title="@string/salva"
+        app:showAsAction="always"
+        />
+
+</menu>
+
+//layout
+
+//cella
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/element_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        />
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:layout_below="@+id/element_Name"
+        >
+
+        <TextView
+            android:id="@+id/element_data1"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/element_data2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:textSize="12sp"
+            android:textColor="@android:color/black"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+
+        <CheckBox
+            android:id="@+id/check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/linear"
+            android:text="@string/checked"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="4dp"
+            android:layout_centerHorizontal="true"
+            android:layoutDirection="rtl"
+            />
+
+
+</RelativeLayout>
+
+//registrazione
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Registrazione">
+
+    <TextView
+        android:id="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Nome"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/nome2"
+        android:layout_below="@+id/nome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/Nome"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/cognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Cognome"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/nome2"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/cognome2"
+        android:layout_below="@+id/cognome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/Cognome"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:layout_below="@+id/cognome2"
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/E_mail"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/mail2"
+        android:layout_below="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:hint="@string/E_mail"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_below="@+id/mail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Password"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_below="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="@string/Password"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/Repetpass"
+        android:layout_below="@+id/password2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Ripeti_Password"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/Repetpass2"
+        android:layout_below="@+id/Repetpass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:hint="@string/Ripeti_Password"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Repetpass2"
+        android:text="@string/Registrati"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:background="@drawable/button_shapers"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="12dp"/>
+
+
+</RelativeLayout>
+
+//main di default
+
+//login
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/E_mail"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/mail2"
+        android:layout_below="@+id/mail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:maxLines="1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_below="@+id/mail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/Password"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <EditText
+        android:id="@+id/password2"
+        android:layout_below="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password2"
+        android:text="@string/login"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:background="@drawable/button_shapers"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <Button
+        android:id="@+id/res"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log"
+        android:text="@string/Registrati"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/button_shapers"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/res"
+        android:layout_marginTop="30dp"
+        android:text="@string/dialog"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textAlignment="center"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        />
+
+    <TextView
+        android:id="@+id/user1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/dialog"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+    <TextView
+        android:id="@+id/user2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/user1"
+        android:layout_marginTop="30dp"
+        android:textColor="@android:color/black"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginBottom="12dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+</RelativeLayout>
+//lista
+
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ListaLibri">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/List"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="LinearLayoutManager">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>
+
+//nel drawable shaper
+
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="rectangle" >
+    <corners
+        android:radius="14dp"
+        />
+    <gradient
+        android:angle="45"
+        android:centerX="35%"
+        android:centerColor="@color/centerColor"
+        android:startColor="@color/startColor"
+        android:endColor="@color/endColor"
+        android:type="linear"
+        />
+    <padding
+        android:left="0dp"
+        android:top="0dp"
+        android:right="0dp"
+        android:bottom="0dp"
+        />
+    <size
+        android:width="270dp"
+        android:height="60dp"
+        />
+    <stroke
+        android:width="3dp"
+        android:color="@color/blu"
+        />
+</shape>
+
+///
+///
+///
+///activity
+
+//registrazione
+
+package app.projectwork.simulazione;
+
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+import java.util.List;
+import java.util.regex.Pattern;
+
+import app.projectwork.simulazione.Entita.Utente;
+
+public class Registrazione extends AppCompatActivity {
+
+    private Button resButton;
+    private EditText pass, repetpass, nome, cognome, mail;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_registrazione);
+
+        //mostro un semplice titolo nella toolbar di defaul
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(R.string.Titolo_Registrazione);
+
+        //collego i vari elementi al loro layout
+        resButton = (Button) findViewById(R.id.button3);
+        nome = (EditText) findViewById(R.id.nome2);
+        cognome = (EditText) findViewById(R.id.cognome2);
+        mail = (EditText) findViewById(R.id.mail2);
+        pass = (EditText) findViewById(R.id.password2);
+        repetpass = (EditText) findViewById(R.id.Repetpass2);
+
+        //ricordo all'utente di inserire una mail di formato corretto
+        mail.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkMail(mail.getText().toString().trim());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        //ricordo all'utente di inserire una password di range tra 6 e 10
+        pass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkPassword(pass.getText().toString().trim());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+            }
+        });
+
+        //ricordo all'utente di ripetere correttamente la password
+        repetpass.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                checkConfPassword(repetpass.getText().toString().trim());
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                checkConfirmPassword(pass.getText().toString().trim(), repetpass.getText().toString().trim());
+            }
+        });
+
+        //click del pulsante registrati
+        resButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //controllo che tutti i campi siano stati riempiti correttamente
+                if (checkNome(nome.getText().toString().trim()) &&
+                        checkCognome(cognome.getText().toString().trim()) &&
+                        checkMail(mail.getText().toString().trim()) &&
+                        checkPassword(pass.getText().toString().trim()) &&
+                        checkConfirmPassword(pass.getText().toString().trim(), repetpass.getText().toString().trim())) {
+
+                    //prendo i dati inseriti dall'utente
+                    String m = mail.getText().toString().trim();
+                    String n = nome.getText().toString().trim();
+                    String c = cognome.getText().toString().trim();
+                    String p = pass.getText().toString().trim();
+
+                    //creo un nuovo utente con i dati inseriti
+                    Utente u = new Utente(m, n, c, p);
+
+                    //prendo la lista di utenti già registrati
+                    List<Utente> list = DatiMock.getInstance().getUtenti();
+
+                    //eseguo il metodo che controlla che la mail non sia già registrata e in caso contrario aggiunge
+                    //l'utente nell'elenco degli utenti registrati
+                    checkUtente(list, u);
+                }
+            }
+        });
+    }
+
+    private void checkUtente(List<Utente> l, Utente u) {
+
+        //se non ci sono utenti registrati crea l'utente
+        if (l.size() == 0) {
+            DatiMock.getInstance().addUtente(u); //creo l'utente
+            DatiMock.getInstance().creaValoreMappa(1);//creo la lista di libri per l'utente
+            //ritorno alla pagina di login
+            Intent go_to_Login = new Intent(Registrazione.this, Login.class);
+            startActivity(go_to_Login);
+            finish();
+        } else {
+            //se ci sono utenti registrati ne scorre l'elenco
+            for (int i = 0; i < l.size(); i++) {
+
+                String temp = l.get(i).getEmail();
+
+                //se trova una mail corrispondente all'inserita lancia un dialog di errore
+                if (u.getEmail().equals(temp)) {
+
+                    //dialog di errore se la mail corrisponde con una di quelle registrate
+                    final AlertDialog.Builder alert = new AlertDialog.Builder(Registrazione.this);
+                    alert.setTitle("Attenzione!")
+                            .setMessage("Email già registrata")
+                            .setPositiveButton(R.string.continue_Button, new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                }
+                            })
+                            .setCancelable(false);
+
+                    AlertDialog alertDialog = alert.create();
+                    alertDialog.show();
+
+                } else {
+                    //se non trova una mail corrispondente allora l'utente non esiste e lo crea
+                    if ((!u.getEmail().equals(temp)) && i == l.size() - 1) {
+                        DatiMock.getInstance().addUtente(l.size(), u);//creo l'utente
+                        DatiMock.getInstance().creaValoreMappa(l.size());//creo la lista di libri per quell'utente
+                        //ritorno alla pagina di login
+                        Intent go_to_Login = new Intent(Registrazione.this, Login.class);
+                        startActivity(go_to_Login);
+                        finish();
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    //METODI DI CONTROLLO DELL'INSERIMENTO DEI DATI
+
+    //controlla che il nome non sia vuoto
+    private boolean checkNome(String n) {
+        if (TextUtils.isEmpty(n)) {
+            nome.setError("Please enter a name");
+            return false;
+        }
+        return true;
+    }
+
+    //controlla che il cognome non sia vuoto
+    private boolean checkCognome(String c) {
+        if (TextUtils.isEmpty(c)) {
+            cognome.setError("Please enter a surname");
+            return false;
+        }
+        return true;
+    }
+
+    //metodo che controlla la forma di un e-mail ovvero sia del tipo testo@testo.testo
+    private boolean isValidEmail(String em) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(em).matches();
+    }
+
+    //controlla che la mail non sia vuota e nel caso contrario se è del formato corretto chiamando il metodo precedente
+    private boolean checkMail(String m) {
+
+        if (TextUtils.isEmpty(m)) {
+            mail.setError("Please enter a valid e-mail");
+            return false;
+        } else {
+            if (!isValidEmail(m)) {
+                mail.setError("Please enter a valid e-mail");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //controlla che la password non sia vuota e in caso contrario sia tra i 6 e 10 caratteri
+    private boolean checkPassword(String pw) {
+
+        if (TextUtils.isEmpty(pw)) {
+            pass.setError("Please enter a password");
+            return false;
+        } else if (pw.length() < 6 || pw.length() > 10) {
+            pass.setError("Password should be between 6 to 10 characters");
+            return false;
+        }
+        return true;
+    }
+
+    //controlla che la password ripetuta non sia vuota e in caso contrario sia tra i 6 e 10 caratteri
+    private boolean checkConfPassword(String password) {
+
+        if (TextUtils.isEmpty(password)) {
+            repetpass.setError("Please enter a password");
+            return false;
+        } else if (password.length() < 6 || password.length() > 10) {
+            repetpass.setError("Password should be between 6 to 10 characters");
+            return false;
+        }
+        return true;
+    }
+
+    //controlla che le due password inserite coincidano
+    private boolean checkConfirmPassword(String pw, String conf_pw) {
+
+        if (!pw.equals(conf_pw)) {
+            repetpass.setError("Error! Password doesn't match");
+            return false;
+        }
+        return true;
+    }
+}
+
+
+//main
+
+package app.projectwork.simulazione;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        //istanzio il singleton contenenti i dati di partenza
+        DatiMock.getInstance().init();
+
+        //vado alla pagina di login
+        Intent go_to_main = new Intent(MainActivity.this, Login.class);
+        startActivity(go_to_main);
+        finish();
+    }
+}
+
+//login
+
+package app.projectwork.simulazione;
+
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.os.Handler;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Patterns;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
+import java.util.List;
+import java.util.Map;
+import java.util.regex.Pattern;
+import app.projectwork.simulazione.Entita.Libro;
+import app.projectwork.simulazione.Entita.Utente;
+
+public class Login extends AppCompatActivity {
+
+    private Button log, res;
+    private EditText mail, pass;
+    private TextView user1, user2;
+    private boolean doubleBackToExitPressedOnce = false;
+
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
+
+        //mostro un semplice titolo nella toolbar di defaul
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(R.string.Titolo_Login);
+
+        //collego i vari elementi al loro layout
+        mail = (EditText) findViewById(R.id.mail2);
+        pass = (EditText) findViewById(R.id.password2);
+        log = (Button) findViewById(R.id.log);
+        res = (Button) findViewById(R.id.res);
+        user1 = (TextView) findViewById(R.id.user1);
+        user2 = (TextView) findViewById(R.id.user2);
+
+        //prendo la lista di utenti già registrati
+        final List<Utente> list = DatiMock.getInstance().getUtenti();
+
+        //prendo la mappa contenente la lista dei libri associata ad ogni utente
+        Map<Integer, List<Libro>> mappa = DatiMock.getInstance().getMappaLibri();
+
+        //user per test veloce
+        user1.setText(list.get(0).toString());
+        user2.setText(list.get(1).toString());
+
+        //toast che mostra tutti gli utenti registrati
+        for (int i = 0; i < list.size(); i++) {
+            Toast.makeText(Login.this, list.get(i).toString(), Toast.LENGTH_SHORT).show();
+        }
+
+        //pressione del tasto login
+        log.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                //scorro la lista degli utenti correntemente registrati e constrollo l'esistenza dell'utente inserito
+                for (int i = 0; i < list.size(); i++) {
+
+                    //assegno a delle variabili pemporane i valori inseriti per poi usarle per fare i controlli
+                    String temp = list.get(i).getEmail();
+                    String tempP = list.get(i).getPassword();
+                    String m = mail.getText().toString().trim();
+                    String p = pass.getText().toString().trim();
+
+                    //controllo che mail e passwod rispettino i formati giusti
+                    if (checkMail(m) && checkPassword(p)) {
+                        if (m.equals(temp)) { //se la mail inserita esiste significa che l'utente è registrato
+                            if (p.equals(tempP)) { //quindi controllo se la password inserita corrisponde alla mail
+
+                                // ne prendo l'id per passarlo all'altra activity
+                                int id = list.get(i).getId();
+                                Intent go_to_main = new Intent(Login.this, ListaLibri.class);
+                                go_to_main.putExtra("idUser", id);//passo l'id all'altra activity
+                                startActivity(go_to_main);
+                                finish();
+                                break;
+                            } else {//caso in cui mail corretta password sbagliata
+
+                                //dialog di errore se la password non corrisponde a quella al momento della registrazione
+                                final AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+                                alert.setTitle("Attenzione!")
+                                        .setMessage("Password non corretta")
+                                        .setPositiveButton(R.string.continue_Button, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                            }
+                                        })
+                                        .setCancelable(false);
+
+                                AlertDialog alertDialog = alert.create();
+                                alertDialog.show();
+                                break;
+                            }
+                        } else {// caso in cui la mail è sbagliata
+
+                            //se la mail è sbagliata e abbiamo controllato tutti gli utenti registrati
+                            if (i == list.size()-1){
+
+                                //dialog di errore se la mail non corrisponde con nessuna di quelle registrate
+                                final AlertDialog.Builder alert = new AlertDialog.Builder(Login.this);
+                                alert.setTitle("Attenzione!")
+                                        .setMessage("Email non registrata")
+                                        .setPositiveButton(R.string.continue_Button, new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                            }
+                                        })
+                                        .setCancelable(false);
+
+                                AlertDialog alertDialog = alert.create();
+                                alertDialog.show();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        //pressione del pulsante registrati si sposta all'activity corrispondente ovvero di registrazione
+        res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent go_to_book = new Intent(Login.this, Registrazione.class);
+                startActivity(go_to_book);
+            }
+        });
+
+    }
+
+    //qualora avessi inserito dei dati e fossi andato e tornato dalla registrazione tramite il pulsante back
+    //svuta i campi precedentemente inseriti
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        mail.setText("");
+        pass.setText("");
+    }
+
+    //METODI DI CONTROLLO DELL'INSERIMENTO DEI DATI
+
+    //metodo che controlla la forma di un e-mail ovvero sia del tipo testo@testo.testo
+    private boolean isValidEmail(String em) {
+        Pattern pattern = Patterns.EMAIL_ADDRESS;
+        return pattern.matcher(em).matches();
+    }
+
+    //controlla che la mail non sia vuota e nel caso contrario se è del formato corretto chiamando il metodo precedente
+    private boolean checkMail(String m) {
+
+        if (TextUtils.isEmpty(m)) {
+            mail.setError("Please enter a valid e-mail");
+            return false;
+        } else {
+            if (!isValidEmail(m)) {
+                mail.setError("Please enter a valid e-mail");
+                return false;
+            }
+        }
+        return true;
+    }
+
+    //controlla che la password non sia vuota e in caso contrario sia tra i 6 e 10 caratteri
+    private boolean checkPassword(String pw) {
+
+        if (TextUtils.isEmpty(pw)) {
+            pass.setError("Please enter a password");
+            return false;
+        } else if (pw.length() < 6 || pw.length() > 10) {
+            pass.setError("Password should be between 6 to 10 characters");
+            return false;
+        }
+        return true;
+    }
+
+    //METODO CHE ALLA PRESSIONE DEL TASTO BACK NON CHIUDE L'APP MA CHIEDE DI PREMERE NUOVAMENTE PER CONFERMA
+    @Override
+    public void onBackPressed() {
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_LONG).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+    }
+}
+
+
+//lista
+package app.projectwork.simulazione;
+
+import android.content.Intent;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.widget.Toast;
+import java.util.List;
+import java.util.Map;
+import app.projectwork.simulazione.Entita.Libro;
+
+public class ListaLibri extends AppCompatActivity {
+
+    private Map<Integer, List<Libro>> mappa;
+    private int id;
+    List<Libro> arrayList;
+    private boolean doubleBackToExitPressedOnce = false;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_lista_libri);
+
+        //mostro un semplice titolo nella toolbar di defaul
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(R.string.Titolo_Lista);
+
+        //recupero l'id dell'utente dalla schermata precedente
+        Intent intent = getIntent();
+        id = intent.getIntExtra("idUser", 0);
+
+        //prendo la mappa contenente la lista dei libri associata ad ogni utente
+        mappa = DatiMock.getInstance().getMappaLibri();
+
+        //se l'id passato è corretto prendo la lista di libri associata a quell'utente e ne creo una lista
+        if (id != 0) {
+            arrayList = mappa.get(id);
+
+            //dichiaro l'adapter della lista del tipo appartenente alla classe creata a parte
+            ListaAdapter adapter = new ListaAdapter(getApplicationContext(), arrayList, id);
+            RecyclerView recyclerView = (RecyclerView) findViewById(R.id.List);
+            recyclerView.setAdapter(adapter);
+        }
+    }
+
+    //creo un semplice pulsante salva nella toolbar di default per completare l'operazione di selezione di libri
+    // già letti
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    //alla pressione del tasto salva ritorno alla schermata di login
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.salva) {
+
+            Intent return_to_log = new Intent(ListaLibri.this, Login.class);
+            startActivity(return_to_log);
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    //METODO CHE ALLA PRESSIONE DEL TASTO BACK NON CHIUDE L'APP MA CHIEDE DI PREMERE NUOVAMENTE PER CONFERMA
+    @Override
+    public void onBackPressed() {
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit or click Salva to continue", Toast.LENGTH_LONG).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
+    }
+}
+
+//adapter
+package app.projectwork.simulazione;
+
+import android.content.Context;
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
+import android.widget.TextView;
+
+import java.util.List;
+
+import app.projectwork.simulazione.Entita.Libro;
+
+public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ViewHolder> {
+
+    private final Context mContext;
+    private final List<Libro> mItem;
+    private final int mid;
+
+    public ListaAdapter(Context context, List<Libro> booklist, int p) {
+        this.mContext = context;
+        this.mItem = booklist;
+        this.mid = p;
+    }
+
+    public class ViewHolder extends RecyclerView.ViewHolder {
+        final TextView name, data1, data2;
+        final CheckBox checkBox;
+
+        ViewHolder(View itemView) {
+            super(itemView);
+            name = (TextView) itemView.findViewById(R.id.element_Name);
+            data1 = (TextView) itemView.findViewById(R.id.element_data1);
+            data2 = (TextView) itemView.findViewById(R.id.element_data2);
+            checkBox = (CheckBox) itemView.findViewById(R.id.check_box);
+        }
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        LayoutInflater inflater = LayoutInflater.from(mContext);
+        View itemView = inflater.inflate(R.layout.list_element, viewGroup, false);
+        ListaAdapter.ViewHolder viewHolder = new ListaAdapter.ViewHolder(itemView);
+        return viewHolder;
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull final ListaAdapter.ViewHolder holder, final int position) {
+        final Libro item = mItem.get(position);
+        holder.name.setText(item.getTitolo());
+        holder.data1.setText(item.getAutore());
+        holder.data2.setText(item.getCasaEditrice());
+        holder.checkBox.setChecked(item.isRead());
+
+        //qualora lo stato della checkbox cambiasse per la pressione dell'utente
+        //controllo in quale stato si trova se attivo o disattivato
+        //e aggiorna la lista collegata all'utente
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (holder.checkBox.isChecked()) {
+                    //se era disattivato e ora è attivato setto il libro come letto
+                    Libro l = new Libro(position, item.getTitolo(), item.getAutore(), item.getCasaEditrice(), true);
+                    DatiMock.getInstance().aggiornaMappa(mid, position, l);
+
+                } else {
+                    //se era attivo e ora è stato disattivato setto il libro come letto
+                    Libro l = new Libro(position, item.getTitolo(), item.getAutore(), item.getCasaEditrice(), false);
+                    DatiMock.getInstance().aggiornaMappa(mid, position, l);
+                }
+            }
+        });
+    }
+
+    @Override
+    public int getItemCount() {
+        return mItem.size();
+    }
+}
+
+//singleton
+package app.projectwork.simulazione;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import app.projectwork.simulazione.Entita.Libro;
+import app.projectwork.simulazione.Entita.Utente;
+
+public class DatiMock {
+    private ArrayList<Libro> libri;
+    private ArrayList<Utente> utenti;
+    private Map<Integer, List<Libro>> mappaLibri;
+
+    private static DatiMock instance;
+
+    private DatiMock() {
+    }
+
+    public static DatiMock getInstance() {
+        if (instance == null) {
+            instance = new DatiMock();
+        }
+        return instance;
+    }
+
+    public void init() {
+        libri = new ArrayList<>();
+        utenti = new ArrayList<>();
+        mappaLibri = new HashMap<>();
+
+        // lista libri
+        libri.add(new Libro("Il signore degli anelli", "J. R. Tolkien", /*0,*/  "casa editrice uno", false));
+        libri.add(new Libro("I promessi spsosi", "A. Manzoni", /*0,*/  "casa editrice due", true));
+        libri.add(new Libro("Corso completo di russo", "V. K.", /*0,*/  "casa editrice tre", false));
+        libri.add(new Libro("Design Patterns", "K. K.", /*0,*/  "casa editrice uno", false));
+        libri.add(new Libro("Neuromante", "W. Gibson", /*0,*/  "casa editrice due", true));
+        libri.add(new Libro("Ubik", "P. K. Dick", /*0,*/  "casa editrice tre", false));
+
+        // lista utente
+        utenti.add(new Utente(1, "pippo@pippo.it", "pippo", "goofy", "qwerty"));
+        utenti.add(new Utente(2, "paperino@paperino.it", "donald", "duck", "qwerty"));
+
+        /*Ogni utente avrà una copia della lista di libri su cui potrà selezionare i libri che a letto*/
+
+        //creo una copia della lista di default per gli utenti già presenti nell'app
+        ArrayList<Libro> libriU1 = new ArrayList<>();
+        libriU1.addAll(libri);
+
+        /*aggiungo la copia dei libri per il primo utente in una mappa che associa
+        l'id utente con la sua corrispettiva copia*/
+        mappaLibri.put(1, libriU1);
+
+        //agli utenti successivi al primo aggiungo un libro in più per mostrare che le liste di libri
+        //tra il primo e secondo utente sono differenti
+        libri.add(new Libro("Ubik", "P. K. Dick", /*0,*/  "casa editrice tre", false));
+
+        //creo una copia della lista di default per gli utenti già presenti nell'app
+        ArrayList<Libro> libriU2 = new ArrayList<>();
+        libriU2.addAll(libri);
+
+        /*aggiungo la copia dei libri per il secondo utente nella mappa che associa
+        l'id utente con la sua corrispettiva copia*/
+        mappaLibri.put(2, libriU2);
+
+    }
+
+    //metodo che verrà chiamato alla creazione dei successivi utenti e che fa una nuova copia della lista di libri
+    //e la aggiuge alla mappa
+    public void creaValoreMappa(int i) {
+
+        //creo una nuova copia della lista di libri
+        ArrayList<Libro> libriUn = new ArrayList<>();
+        libriUn.addAll(libri);
+
+        //aggiungo alla mappa la nuova copia e il nuovo id dell'utente appena registrato
+        mappaLibri.put(i, libriUn);
+    }
+
+    //metodo che aggiorna la lista dei libri associata all'utente in base alle sue selezioni
+    public void aggiornaMappa(int key, int idBook, Libro l) {
+        mappaLibri.get(key).set(idBook, l);
+    }
+
+    //aggiunge un utente alla lista di utenti già registrati
+    public void addUtente(Utente utente) {
+        utenti.add(utente);
+    }
+
+    //overloading del metodo precedente
+    public void addUtente(int i, Utente u) {
+
+        String m = u.getEmail();
+        String n = u.getNome();
+        String c = u.getCognome();
+        String p = u.getPassword();
+
+        utenti.add(new Utente(i, m, n, c, p));
+    }
+
+    //metodo che restituisce la lista di libri
+    public ArrayList<Libro> getLibri() {
+        return libri;
+    }
+
+    //metodo che restituisce la lista di utenti gia registrati
+    public ArrayList<Utente> getUtenti() {
+        return utenti;
+    }
+
+    //metodo che restituisce la mappa dei libri degli utenti
+    public Map<Integer, List<Libro>> getMappaLibri() {
+        return mappaLibri;
+    }
+}
+
+//in app nuova cartella entita 
+
+//utente
+
+package app.projectwork.simulazione.Entita;
+
+public class Utente {
+    private int id;
+    private String email;
+    private String password;
+    private String nome;
+    private String cognome;
+    private static int counter = 0;
+
+    public Utente() {
+    }
+
+    public Utente(int id, String email, String nome, String cognome,String password) {
+        counter++;
+        this.id = counter;
+        this.email = email;
+        this.password = password;
+        this.nome = nome;
+        this.cognome = cognome;
+    }
+
+    public Utente(String email, String nome, String cognome,String password) {
+        this.email = email;
+        this.password = password;
+        this.nome = nome;
+        this.cognome = cognome;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCognome() {
+        return cognome;
+    }
+
+    public void setCognome(String cognome) {
+        this.cognome = cognome;
+    }
+
+    @Override
+    public String toString() {
+        return  "id='"+ id + '\'' +", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", nome='" + nome + '\'' +
+                ", cognome='" + cognome + '\'';
+    }
+}
+
+//libro
+package app.projectwork.simulazione.Entita;
+
+public class Libro {
+    private static int counter = 0;
+
+    private int id;
+    private String titolo;
+    private String autore;
+//    private int utente_id;
+    private String casaEditrice;
+    private boolean isRead = false;
+
+    public Libro() {
+    }
+
+    public Libro(String titolo, String autore, /*int utente_id,*/ String casaEditrice, boolean letto) {
+        counter++;
+        this.id = counter;
+        this.titolo = titolo;
+        this.autore = autore;
+//        this.utente_id = utente_id;
+        this.casaEditrice = casaEditrice;
+        this.isRead = letto;
+    }
+
+    public Libro(int id, String titolo, String autore, /*int utente_id,*/ String casaEditrice, boolean letto) {
+        this.id = id;
+        this.titolo = titolo;
+        this.autore = autore;
+//        this.utente_id = utente_id;
+        this.casaEditrice = casaEditrice;
+        this.isRead = letto;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getTitolo() {
+        return titolo;
+    }
+
+    public void setTitolo(String titolo) {
+        this.titolo = titolo;
+    }
+
+    public String getAutore() {
+        return autore;
+    }
+
+    public void setAutore(String autore) {
+        this.autore = autore;
+    }
+
+//    public int getUtente_id() {
+//        return utente_id;
+//    }
+//
+//    public void setUtente_id(int utente_id) {
+//        this.utente_id = utente_id;
+//    }
+
+    public String getCasaEditrice() {
+        return casaEditrice;
+    }
+
+    public void setCasaEditrice(String casaEditrice) {
+        this.casaEditrice = casaEditrice;
+    }
+
+    public boolean isRead() {
+        return isRead;
+    }
+
+    public void setRead(boolean read) {
+        isRead = read;
+    }
+
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "id=" + id +
+                ", titolo='" + titolo + '\'' +
+                ", autore='" + autore + '\'' +
+                //", utente_id=" + utente_id +
+                ", casaEditrice='" + casaEditrice + '\'' +
+                ", isRead=" + isRead +
+                '}';
+    }
+
+}
+
+
+//domande
+
+Esercizio 3: Descrivere la procedura per la distribuzione di un app sul Play store di Google elencando le operazioni necessarie nelle varie fasi.
+
+Le fasi per inserire un app sul Play Store di Google sono essenzialmente 4: creare un app, generarne un APK firmato, loggarsi con un Merchant Account se sono app a pagamento o Developer Account se sono app gratuite, riempire la form obbligatoria di descrizione dell'app.
+
+Per generare un APK firmato bisogna creare un keystore, ovvero una chiave univoca legata all'app in modo da rendere l'idenficazione dell' app con il suo developer semplice e immediata senza possibilità di errore con app simili o omonime. Per creare un keystore si usa la console di Android Studio tramite un comando apposito.
+
+Dopodichè ci si collega al sito web: play.google.com/apps/publish. Se non si possiede già si crea un Merchant Account o un Developer Account pagando 25 dollari una tantum a vita; oppure se lo si possiede si fa il log in con l'account posseduto. 
+
+La form obbligatoria contiene numerosi campi, tra i più importanti ci sono: un Titolo, una descrizione breve, una descrizione completa, degli screenshoot di alcune schermate dell'app per mostrarle al pubblico, una icona di risoluzione 512x512, la tipologia dell'app se gioco o non gioco, la sua categoria, la mail della compagnia o dello sviluppatore, l'URL che rimanda alla Privacy Policy e infine rispondendo a delle domande si genera il Content Rating
+
+Finito anche quest'ultimo passaggio non resta che aspettare che venga valutata e che venga inserita sul play store.
+
+
+Esercizio 4: Descrivere e raccogliere informazioni per esemplificare come avete eseguito i test durante lo sviluppo usando il debugger di Android Studio e gli altri strumenti a vostra disposizione.
+
+Android Studio fornisce un debugger che permette di eseguire le seguenti azoni:
+
+selezionare un device sul quale eseguire il debug dell'app
+inserire dei breakpoint che sono dei punti in cui si arresterà il codice per verificare la funzionalità del codice fino a quel punto
+verificare il contenuto delle variabili e il risultato delle funzioni a runtime.
+
+Se si volesse eseguire il debug sull'emulatore fornito sempre da Android Studio, la procedura di debug è attiva di default. Qualora invece la si svolgesse su un dispositivo connesso, bisognerebbe prima attivare l'opzione di abilitazione di debug nelle impostazioni di sviluppatore del dispositivo dopo averle attivate.
+
+Dopo aver inserito dei breakpoint cliccando sul numero di riga di codice o premendo la combinazione di tasti CTRL+F8 dopo essersi posizionati con il cursore sulla linea di codice scelta, si avvia il debugger premendo l'apposito pulsante nella toolbar di Android Studio, il quale lancerà l'app e eseguirà il codice fino al primo breakpoint che incontrerà. Se l'app fosse già in esecuzione è possibile collegare un debug al processo con il comando presente nei menù "Attach debugger to Android process" e selezionando il processo dell'app e quindi il pulsante "ok" si avvierà il debugger.  Da questo momento in poi per continuare l'esecuzione del codie e quindi dell'app dovremmo scegliere se continuare ad eseguire linea per linea il codice, qualora si incontrasse un metodo se eseguirlo direttamente o entrarci dentro per analizzare più nel dettaglio la sua esecuzione o riprende l'esecuzione del codice fino al prossimo breakpoint o qualora non ve ne fossero fino alla fine del codice dell'app.
+
+Esercizio 6: Nel rispetto del GDPR, definire lo schema del flusso di una procedura che risponda al principio dell'accountaility.
+
+Per rispettare il principio dell'accountability si devono salvare tutte le operazioni che hanno a che vedere con la gestione dei dati sentibili degli utenti. Queste operazioni si possono salvare o sul un file di log o in una tabella di un database. Se si sceglie il file di log, quest’ultimo dovrà essere protetto da dei permessi dovrà avere un proprietario tale da garantirne la sicurezza. Qualora si utilizzasse un database questo dovrà essere su un database a parte dove sarà stato creato un utente specifico che avrà solo i permessi di INSERT sulla tabella e non di DELETE O UPDATE per garantirne sempre la sicurezza.
+
+Per gestire i dati sensibili si registrano i dati inviati dalle operazioni che comportano la gestione dei dati degli utenti. Prima di salvare veramente i dati, a questi ultimi viene associato il timestamp al momento dell'operazione, l'ip address di chi ha eseguito l'operazione e il suo consenso. Dopo il salvataggio dei dati, si salva sempre nel file di log o la tabella del database l'esito dell'operazione con il suo id idenficativo, il suo timestamp e l'ip address.
+
+Ad esempio se dovessi salvare i dati di registrazione di un nuovo utente: prima di salvare i dati veri e propri della form di registrazione, mi salvo sul file di log o la tabella del database l'ip address, il timestamp ovvero la data e l'ora in cui viene lanciata l'operazione, il consenso e i dati della form. Poi dopo aver salvato i dati della form nel loro posto stabilito che sia un database esterno, uno interno o un file ecc... prenderò l'id univoco di questa operazione, il suo esito, il suo timestamp ovvero quando l'oprazione ha rilasciato un esito e sempre l'ip address e li salverò sempre o nel file di log o nella tabella del database dove avevo salvato le informazioni raccolte prima di salvare i dati veri e propri.
+
+Per riepilogare:
+1- Salvo nel log/database i dati che mi sono stati passati dalla form compreso il consenso (ip_address, timestamp,consenso, campi form che se contengono una password sarà salvata criptata).
+2- Salvo i dati nello posto stablito (database esterno, interno, file locale, ecc...), registrando l’id univoco dell’operazione e il suo esito.
+3- Salvo nel log/databse l’id univoco e l’esito dell’operazione con il timestamp e l’ip address.
